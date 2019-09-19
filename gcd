@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+//int gcd(int n1,int n2);
+
+void main()
+
+{
+    
+int a,b,i,r;
+    
+printf("enter the numbers");
+    
+scanf("%d%d",&a,&b);
+    
+
+    
+for(i=1;i<=a&&i<=b;i++)
+    
+{
+        
+if(a%i==0&&b%i==0)
+        
+r=i;
+    
+}
+    
+    
+printf("%d",r);
+
+}
