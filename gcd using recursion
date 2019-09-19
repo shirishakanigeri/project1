@@ -1,0 +1,18 @@
+#include<stdio.h>
+void gcd(int a,int b);
+void main()
+{
+    int a,b,i,r;
+    printf("enter the numbers");
+    scanf("%d%d",&a,&b);
+    gcd(a,b);
+}
+void    gcd(int a,int b)
+{int i,r;
+    for(i=1;i<=a&&i<=b;i++)
+    {
+        if(a%i==0&&b%i==0)
+        r=i;
+    }
+    printf("%d",r);
+}
