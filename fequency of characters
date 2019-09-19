@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+void main()
+
+{
+   
+ char a[10],ch;
+  
+  int i,count=0;
+   
+ printf("enter the string");
+   
+ scanf("%s",a);
+    
+for(ch='a';ch<='z';ch++)
+   
+ {   count=0;
+        
+for(i=0;a[i]!='\0';i++)
+      
+  {
+           
+ if(a[i]==ch)
+          
+  count++;
+      
+  }
+       
+ printf("the character %c occured %d times\n",ch,count);
+  
+  }
+
+}
