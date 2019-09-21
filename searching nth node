@@ -1,0 +1,207 @@
+#include<stdlib.h>
+
+#include<stdio.h>
+
+struct node
+
+{
+    
+int data;
+    
+struct node* next;
+
+};
+
+
+struct node* addnode(struct node* h)
+
+{
+    
+struct node * newnode =(struct node *)malloc(sizeof(struct node*));
+    
+printf("data");
+    
+scanf("%d",&newnode->data);
+    
+newnode->next=NULL;
+    
+h->next=newnode;
+    
+return newnode;
+    
+
+}
+
+
+void display(struct node *h)
+
+{
+    
+while(h!=NULL)
+   
+ {
+        
+printf("%d",h->data);
+        
+h=h->next;
+    
+}
+
+}
+
+
+struct node *delete(struct node*h)
+{
+    int n,i=1;
+    struct node * head=h;
+    struct node * temp=h;
+    struct node *p=h;
+    struct node *temp1=h;
+    struct node *q;
+    printf("enter the locarion");
+    scanf("%d",&n);
+    if(n==1)
+    {
+        temp1=temp->next;
+        temp->next=NULL;
+        free(temp);
+    }
+    else
+    {
+        while(i<n-1)
+        {
+            p=p->next;
+            i++;
+        }
+        q=p->next;
+        p->next=q->next;
+        q->next=NULL;
+        free(q);
+    }
+display(head);
+    
+}
+
+struct node * insertnode(struct node * h)
+{   struct node *p=h;
+    int i=1,n,k;
+    struct node * head=h;
+    struct node * newnode=(struct node *)malloc(sizeof(struct node *));
+    printf("enter the location");
+    scanf("%d",&n);
+    printf("enter the data");
+    scanf("%d",&k);
+    
+    if(n==1)
+    {
+        newnode->data=k;
+        newnode->next=head;
+       // return newnode;
+       head=newnode;
+    }
+    else
+    {
+     while(i<n)
+     {
+         p=p->next;
+         i++;
+     }
+     newnode->next=p->next;
+     p->next=newnode;
+      //return newnode;   
+    }
+     display(head);
+     
+}
+
+struct node * search(struct node*h)
+
+{   
+int m,l,k,count=1;
+
+    
+printf("enter the node to be searched from last");
+
+scanf("%d",&k);
+
+
+    
+struct node* temp=h;
+    
+count=1;
+    
+while(temp->next!=NULL)
+    
+{
+        
+temp=temp->next;
+        
+count++;
+    
+}
+    
+l=(count-k)+1;
+    
+m=1;
+    
+while(m<l)
+    
+{
+        
+temp=temp->next;
+       
+ m++;
+    
+}
+    
+printf("%d",temp->data);
+
+}
+
+
+
+
+
+
+
+
+
+
+void main()
+
+{
+   
+ int x,n;
+    
+printf("enter the no of elements");
+    
+scanf("%d",&n);
+    
+struct node * head=(struct node*)malloc(sizeof(struct node*));
+   
+ struct node * temp=head;
+    
+printf("enter the data");
+    
+scanf("%d",&x);
+    
+head->data=x;
+    
+head->next=NULL;
+   
+ n--;
+    
+while(n>0)
+    
+{
+        
+temp=addnode(temp);
+        
+n--;
+    
+}
+   
+display(head); 
+
+}
+
