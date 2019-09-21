@@ -50,70 +50,6 @@ h=h->next;
 }
 
 
-struct node *delete(struct node*h)
-{
-    int n,i=1;
-    struct node * head=h;
-    struct node * temp=h;
-    struct node *p=h;
-    struct node *temp1=h;
-    struct node *q;
-    printf("enter the locarion");
-    scanf("%d",&n);
-    if(n==1)
-    {
-        temp1=temp->next;
-        temp->next=NULL;
-        free(temp);
-    }
-    else
-    {
-        while(i<n-1)
-        {
-            p=p->next;
-            i++;
-        }
-        q=p->next;
-        p->next=q->next;
-        q->next=NULL;
-        free(q);
-    }
-display(head);
-    
-}
-
-struct node * insertnode(struct node * h)
-{   struct node *p=h;
-    int i=1,n,k;
-    struct node * head=h;
-    struct node * newnode=(struct node *)malloc(sizeof(struct node *));
-    printf("enter the location");
-    scanf("%d",&n);
-    printf("enter the data");
-    scanf("%d",&k);
-    
-    if(n==1)
-    {
-        newnode->data=k;
-        newnode->next=head;
-       // return newnode;
-       head=newnode;
-    }
-    else
-    {
-     while(i<n)
-     {
-         p=p->next;
-         i++;
-     }
-     newnode->next=p->next;
-     p->next=newnode;
-      //return newnode;   
-    }
-     display(head);
-     
-}
-
 struct node * search(struct node*h)
 
 {   
@@ -143,6 +79,7 @@ count++;
 l=(count-k)+1;
     
 m=1;
+temp=h;
     
 while(m<l)
     
@@ -154,7 +91,7 @@ temp=temp->next;
     
 }
     
-printf("%d",temp->data);
+printf("%d\n",temp->data);
 
 }
 
